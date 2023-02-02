@@ -1,0 +1,55 @@
+{
+    "swagger": "2.0",
+    "info": {
+        "contact": {
+            "name": "Seraf",
+            "url": "http://seraf.dev",
+            "email": "seraf@example.com"
+        },
+        "license": {
+            "name": "Apache 2.0",
+            "url": "http://www.apache.org/licenses/LICENSE-2.0.html"
+        }
+    },
+    "paths": {
+        "/items": {
+            "get": {
+                "description": "get items",
+                "consumes": [
+                    "application/json"
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "tags": [
+                    "items"
+                ],
+                "summary": "GetItems",
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "schema": {
+                            "type": "array",
+                            "items": {
+                                "$ref": "#/definitions/controller.Item"
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    },
+    "definitions": {
+        "controller.Item": {
+            "type": "object",
+            "properties": {
+                "information": {
+                    "type": "string"
+                },
+                "moreInformation": {
+                    "type": "integer"
+                }
+            }
+        }
+    }
+}

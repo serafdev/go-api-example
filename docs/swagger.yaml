@@ -1,0 +1,35 @@
+definitions:
+  controller.Item:
+    properties:
+      information:
+        type: string
+      moreInformation:
+        type: integer
+    type: object
+info:
+  contact:
+    email: seraf@example.com
+    name: Seraf
+    url: http://seraf.dev
+  license:
+    name: Apache 2.0
+    url: http://www.apache.org/licenses/LICENSE-2.0.html
+paths:
+  /items:
+    get:
+      consumes:
+      - application/json
+      description: get items
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            items:
+              $ref: '#/definitions/controller.Item'
+            type: array
+      summary: GetItems
+      tags:
+      - items
+swagger: "2.0"
